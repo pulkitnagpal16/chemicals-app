@@ -1,0 +1,23 @@
+<div class="button-container">
+  <h1>Chemical Compounds App</h1>
+  <button id="add" routerLink="/add">Add Compound</button>
+</div>
+
+<div class="card-container">
+  <div *ngFor="let compound of compounds">
+    <div class="card" [routerLink]="['/compounds', compound.id]">
+      <img src={{compound.strImageSource}}>
+      <div class="card-body">
+        <h5 class="card-title">{{ compound.CompoundName }}</h5>
+      </div>
+    </div>
+</div>
+</div>
+
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage>=totalPages">Next</button>
+  </div>
+
+  
